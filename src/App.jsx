@@ -12,27 +12,43 @@ const App = () => {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
-  const addNote = (note) => setNotes((prevNotes) => [...prevNotes, note]);
+  const addNote = (text) => {
+    const newNote = { text, completed: false }; // Each note has text and a completion status
+    setNotes((prevNotes) => [...prevNotes, newNote]);
+  };
 
   const deleteNote = (index) =>
     setNotes((prevNotes) => prevNotes.filter((_, i) => i !== index));
 
   const editNote = (index, newText) => {
     setNotes((prevNotes) =>
-      prevNotes.map((note, i) => (i === index ? newText : note))
+      prevNotes.map((note, i) => (i === index ? { ...note, text: newText } : note))
+    );
+  };
+
+  const toggleCompletion = (index) => {
+    setNotes((prevNotes) =>
+      prevNotes.map((note, i) =>
+        i === index ? { ...note, completed: !note.completed } : note
+      )
     );
   };
 
   return (
     <div className="container">
-      <article>
-        <h1 className="center">Notes App</h1>
+    <article>
+        <h1 className="center">To Do List App</h1>
         <NoteForm addNote={addNote} />
-      </article>
-      <NoteList notes={notes} deleteNote={deleteNote} editNote={editNote} />
+    </article>
+      <NoteList
+        notes={notes}
+        deleteNote={deleteNote}
+        editNote={editNote}
+        toggleCompletion={toggleCompletion}
+      />
     </div>
   );
 };
 
-
 export default App;
+
