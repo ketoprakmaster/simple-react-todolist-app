@@ -1,0 +1,73 @@
+/* ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+button {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #d62828;
+} */
+
+/* General list styling */
+body {
+  margin-top: 50px;
+}
+
+article {
+  min-width: 100px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.center {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1px solid #cccccc1f;
+}
+
+.note-text {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.note-actions button {
+  margin-left: 0.5rem;
+}
+
+/* Buttons styling */
+button {
+  border-color: rgba(57, 57, 57, 0.854);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.delete {
+  background: #e63946;
+}
