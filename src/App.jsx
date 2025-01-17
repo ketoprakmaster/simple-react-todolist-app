@@ -35,18 +35,21 @@ const App = () => {
   };
 
   return (
-    <div className="container">
-    <article>
-        <h1 className="center">To Do List App</h1>
-        <NoteForm addNote={addNote} />
-    </article>
-      <NoteList
-        notes={notes}
-        deleteNote={deleteNote}
-        editNote={editNote}
-        toggleCompletion={toggleCompletion}
-      />
-    </div>
+    <main className="container">
+      <article>
+        <hgroup className="center">
+          <h1>To Do List App</h1>
+          <p>Plan your tasks and edit notes</p>
+        </hgroup>
+          <NoteForm addNote={addNote} />
+      </article>
+        <NoteList
+          notes={notes}
+          deleteNote={deleteNote}
+          editNote={editNote}
+          toggleCompletion={toggleCompletion}
+        />
+    </main>
   );
 };
 

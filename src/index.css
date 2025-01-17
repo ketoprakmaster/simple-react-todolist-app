@@ -1,15 +1,11 @@
 /* General list styling */
-body {
-  margin-top: 75px;
-}
-
-article {
-  min-width: 100px;
-}
-
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+hr {
+  margin: 0;
 }
 
 .center {
@@ -18,12 +14,17 @@ ul {
   margin-bottom: 30px;
 }
 
+#root {
+  width: 100%;  /* Full width */
+  max-width: 1000px;  /* Restrict the maximum width */
+  margin: 75px auto;  /* Auto margins to center horizontally and set top margin */
+}
+
 .note-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0.5rem;
-  border-bottom: 1px solid #cccccc1f;
 }
 
 .note-text {
@@ -37,13 +38,14 @@ ul {
 
 /* Buttons styling */
 button {
-  border-color: rgba(57, 57, 57, 0.854);
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .delete {
+  color: white;
   background: #e63946;
+  border: none;
 }

@@ -20,7 +20,7 @@ const NoteList = ({ notes, deleteNote, editNote, toggleCompletion }) => {
     <ul>
       { notes.length === 0 && <h6 className="center">there's nothing you have to do now</h6>}
       {notes.map((note, index) => (
-        <li key={index} className="note-item">
+        <><li key={index} className="note-item">
           <input
             type="checkbox"
             checked={note.completed}
@@ -52,7 +52,7 @@ const NoteList = ({ notes, deleteNote, editNote, toggleCompletion }) => {
               </>
             )}
           </div>
-        </li>
+        </li><hr/></>
       ))}
     </ul>
     </article>
