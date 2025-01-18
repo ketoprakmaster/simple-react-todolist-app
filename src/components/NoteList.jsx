@@ -21,23 +21,25 @@ const NoteList = ({ notes, deleteNote, editNote, toggleCompletion }) => {
       { notes.length === 0 && <h6 className="center">there's nothing you have to do now</h6>}
       {notes.map((note, index) => (
         <><li key={index} className="note-item">
-          <input
-            type="checkbox"
-            checked={note.completed}
-            onChange={() => toggleCompletion(index)}
-          />
-          <div className="note-text">
-            {editIndex === index ? (
+          <div className="note-header">
               <input
-                type="text"
-                value={editText}
-                onChange={(e) => setEditText(e.target.value)}
+                className="checks"
+                type="checkbox"
+                checked={note.completed}
+                onChange={() => toggleCompletion(index)}
               />
-            ) : (
-              <span style={{ textDecoration: note.completed ? "line-through" : "none" }}>
-                {note.text}
-              </span>
-            )}
+              {editIndex === index ? (
+                <input
+                  type="text"
+                  value={editText}
+                  onChange={(e) => setEditText(e.target.value)}
+                />
+              ) : (
+                <span style={{ textDecoration: note.completed ? "line-through" : "none" }}>
+                  {note.text}
+                </span>
+              )}
+
           </div>
           <div className="note-actions">
             {editIndex === index ? (
